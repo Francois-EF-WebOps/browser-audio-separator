@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10151d">
+  <meta name="description" content="Separate vocals and instruments from audio in your browser. Audio stays on your device.">
+  <title>StemLab — Browser Audio Separator</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="./">StemLab</a><span class="privacy">LOCAL-FIRST AUDIO TOOL</span></header>
+    <section class="hero">
+      <p class="eyebrow">AUDIO SEPARATION</p>
+      <h1>Give every track<br><span>its own space.</span></h1>
+      <p class="intro">Prepare an audio file for vocal and instrument separation. Processing is designed to run on your device — your audio is not sent to a server.</p>
+    </section>
+    <section class="workspace" aria-labelledby="upload-title">
+      <div class="section-head"><div><p class="eyebrow">STEP 01</p><h2 id="upload-title">Choose your audio</h2></div><span class="format">MP3 · WAV · M4A · FLAC</span></div>
+      <label class="dropzone" id="dropzone" for="audio-file">
+        <span class="upload-icon" aria-hidden="true">↑</span>
+        <strong>Choose an audio file</strong>
+        <span>or drop it here</span>
+        <input id="audio-file" type="file" accept="audio/*,.mp3,.wav,.m4a,.flac,.ogg">
+      </label>
+      <div id="file-panel" class="file-panel" hidden>
+        <div class="file-meta"><strong id="file-name"></strong><span id="file-size"></span></div>
+        <audio id="preview" controls></audio>
+        <button id="clear-file" class="text-button" type="button">Remove file</button>
+      </div>
+      <div class="engine-notice"><span class="notice-dot"></span><p><strong>Separation engine being integrated</strong><br>This preview build can select and play your file. It does not yet claim to separate stems.</p></div>
+      <button class="primary" type="button" disabled>Separation engine not yet available</button>
+    </section>
+    <footer><span>StemLab · Browser-first audio tools</span><span>No audio upload · No account required</span></footer>
+  </main>
+</body>
+</html>
